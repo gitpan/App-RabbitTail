@@ -1,6 +1,6 @@
 package App::RabbitTail;
 use Moose;
-use Net::RabbitFoot;
+use Net::RabbitFoot 1.03;
 use App::RabbitTail::FileTailer;
 use AnyEvent;
 use Data::Dumper;
@@ -9,7 +9,7 @@ use MooseX::Types::Moose qw/ArrayRef Str Int/;
 use Try::Tiny qw/ try catch /;
 use namespace::autoclean;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 $VERSION = eval $VERSION;
 
 with 'MooseX::Getopt';
@@ -46,9 +46,7 @@ has _cv => (
 
 my $rf = Net::RabbitFoot->new(
     varbose => 1,
-)->load_xml_spec(
-    Net::RabbitFoot::default_amqp_spec(),
-);
+)->load_xml_spec();
 
 has _rf => (
     isa => 'Net::RabbitFoot',

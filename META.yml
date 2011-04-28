@@ -8,7 +8,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.910'
+generated_by: 'Module::Install version 0.99'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -20,13 +20,15 @@ no_index:
     - t
 requires:
   AnyEvent: 0
-  AnyEvent::RabbitMQ: 1.01
+  AnyEvent::RabbitMQ: 1.03
   Moose: 0
+  Moose::Autobox: 0
   MooseX::Types: 0
   MooseX::Types::Path::Class: 0
-  Net::RabbitFoot: 1.00
+  Net::RabbitFoot: 1.03
   Try::Tiny: 0
   namespace::autoclean: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.001
+  repository: git://github.com/bobtfish/App-RabbitTail.git
+version: 0.002
